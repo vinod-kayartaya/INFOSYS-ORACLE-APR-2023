@@ -14,5 +14,5 @@ SID: orcl
 | Madhuri Patil    | madhuri.2801746@edgeverve.com   | c##u54   | u54      |
 | Karthik S Chouri | karthik.2801539@edgeverve.com   | c##u55   | u55      |
 | SHREEDEVI SURESH | shreedevi.2801661@edgeverve.com | c##u56   | u56      |
-| Janardhan        |                                 | c##u57   | u57      |
+| Janardhan        | janardhan.2801755@edgeverve.com | c##u57   | u57      |
 | Athmaja S        | athmaja.2801531@edgeverve.com   | c##u58   | u58      |
