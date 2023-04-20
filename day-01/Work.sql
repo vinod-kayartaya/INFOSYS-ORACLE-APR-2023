@@ -142,3 +142,19 @@ WHERE  3 = SALARY_RANK;
 SELECT EMPLOYEE_ID, FIRST_NAME, LAST_NAME, SALARY,
     DENSE_RANK() OVER (ORDER BY SALARY DESC) AS SALARY_RANK
     FROM EMPLOYEES;
+
+
+select first_name || ' ' || last_name as employee_name,
+    job_title,
+    department_name
+from employees e
+    join departments d on e.department_id=d.department_id
+     join jobs j on e.job_id=j.job_id
+    where department_name = 'IT';
+
+
+
+
+
+
+
