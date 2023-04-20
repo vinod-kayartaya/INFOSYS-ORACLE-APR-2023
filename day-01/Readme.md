@@ -151,3 +151,74 @@ Day 11: Advanced PL/SQL Concepts: Debugging Techniques and Best Practices
     -   XML TYPE
     -   SPACIAL TYPES
     -   MEDIA TYPES
+
+## Database objects
+
+-   Tables
+-   Views
+-   Indexes
+-   Sequence
+-   Procedure
+-   Function
+-   Trigger
+-   Package
+
+### DDL (data definition language) can be used for creating/modifying/deleting any of the above objects
+
+-   Whenever a DDL command is issued, an automatic COMMIT takes place
+-   CREATE
+-   ALTER
+-   DROP
+
+```sql
+    CREATE TABLE table_name (
+        column1_definition
+        [,...]
+    ) [AS query]
+```
+
+Column definition includes the following:
+
+-   name of the column
+-   data type and size of the column
+-   optional constraints (such as not null, check, references, primary key, unique )
+-   optional `default` value
+
+```sql
+column_name datatype [{default expr}|{auto increment} ][column_constraint]
+```
+
+An example:
+
+```sql
+CREATE TABLE TBL_CUSTOMERS(
+    CUSTOMER_ID NUMBER AUTO INCREMENT,
+    FIRST_NAME VARCHAR2(20) NOT NULL,
+    LAST_NAME VARCHAR2(20),
+    CITY VARCHAR2(30) DEFAULT 'Bangalore',
+    RATING INT CHECK (RATING BETWEEN 1 AND 10),
+    EMAIL VARCHAR2(200) UNIQUE
+);
+```
+
+In Oracle, unlike MySQL or PostgreSQL, we cannot insert multiple records using a single INSERT command.
+
+Syntax of UPDATE is same as that of MySQL or PostgreSQL:
+
+```sql
+UPDATE table_name
+SET column1=value1 [, column2=value2, ...]
+[WHERE condition]
+```
+
+## Sequences
+
+-   A sequence is a database object that can be used as a seed value for primary keys
+
+```sql
+CREATE SEQUENCE seq_name
+START WITH seed
+INCREMENT BY inc_by
+MAXVALUE max_val
+MINVALUE min_val
+```
