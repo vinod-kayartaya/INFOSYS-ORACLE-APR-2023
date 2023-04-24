@@ -111,7 +111,7 @@ declare
     v_salary employees.salary%type;
     v_department_id employees.department_id%type;
     v_avg_salary v_salary%type;
-    v_grade char(1) := 'B';
+    v_grade char(1);
 begin
     select first_name, last_name, salary, department_id
         into v_first_name, v_last_name, v_salary, v_department_id
