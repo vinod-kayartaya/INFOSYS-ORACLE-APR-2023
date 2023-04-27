@@ -173,7 +173,7 @@ declare
     v_total_payout number:=0;
     v_avg_payout number;
 begin
-    open c1;
+    open c1; -- SQL of c1 is executed now
     
     loop
         fetch c1 into emp;
