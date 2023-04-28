@@ -4,6 +4,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Types;
 
 public class AddNewDepartment {
 	public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class AddNewDepartment {
 		String username = "c##u50";
 		String password = "u50";
 		try (Connection conn = DriverManager.getConnection(url, username, password);
-				CallableStatement stmt = conn.prepareCall("call add_new_dept(?,?,?)");) {
+				CallableStatement stmt = conn.prepareCall("call add_new_dept(?,?,?,?)");) {
 
 //			stmt.setNull(1, Types.VARCHAR);
 //			stmt.setNull(2, Types.INTEGER);
@@ -38,13 +39,15 @@ public class AddNewDepartment {
 //			stmt.setInt(2, 128);
 //			stmt.setInt(3, 3300);
 
-			stmt.setString(1, "Research and Development");
-			stmt.setInt(2, 128);
+			stmt.setString(1, "Sales Management");
+			stmt.setInt(2, 129);
 			stmt.setInt(3, 3300);
-			
+			stmt.registerOutParameter(4, Types.INTEGER);
 			
 			stmt.execute();
-			System.out.println("New department added successfully!");
+			int newDeptId = stmt.getInt(4);
+			
+			System.out.printf("New department added successfully with id %d!%n", newDeptId);
 
 		} // conn.close() and stmt.close() called automatically here
 		catch (SQLException e) {
