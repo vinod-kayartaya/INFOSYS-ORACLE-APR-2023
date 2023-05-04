@@ -1,0 +1,7 @@
+# Assignment questions on TRIGGERS in Oracle's PL/SQL
+
+1. Create a trigger on the employees table that automatically inserts a new row into the employee_audit table every time an employee is inserted or updated. The employee_audit table should have columns for employee_id, action, action_date, modified_by, and old_salary. The action column should indicate whether the action was an insert or an update.
+1. Create a trigger on the employees table that prevents employees from being deleted if they have any dependents in the dependents table. The trigger should display an error message if the deletion is attempted and should roll back the transaction.
+1. Create a trigger on the departments table that updates the last_update column in the employees table every time a department is updated. The last_update column should be set to the current date and time.
+1. Create a trigger on the jobs table that updates the min_salary column in the employees table every time a job's min_salary is updated. The min_salary column in the employees table should be set to the new min_salary value.
+1. Create a trigger on the employees table that automatically updates the salary column every time an employee's job_id or department_id is updated. The new salary value should be based on the salary of the employee's new job 1. and the average salary of all employees in the new department.
